@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Super Life</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>-->
+                <a class="navbar-brand" href="index.html">The Super Life</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Low-fee super funds that invest in low-fee index funds.</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <p class="lead col-lg-12">
+                    Welcome readers! On this page, you can find an up-to-date table of low-fee super funds that invest in low-fee index funds. [TODO - Why is this important? Give example]
+                </p>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Pre-selected Asset Allocation
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Fund Name</th>
+                                        <th>Fees p.a. %</th>
+                                        <th>More info</th>
+                                        <th>Investment fee</th>
+                                        <th>Administration fee p.a.</th>
+                                        <th>Switch fee</th>
+                                        <th>Exit fee</th>
+                                        <th>Indirect cost ratio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>Hostplus Indexed Balanced</td>
+                                        <td>0.02% + $78 p.a.
+                                        <td><a href="https://pds.hostplus.com.au/" target="_blank">Product Disclosure Statement *</a></td>
+                                        <td>0</td>
+                                        <td>$78</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0.02%</td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>Australian Super Index Diversified</td>
+                                        <td>0.12%</td>
+                                        <td><a href="https://www.australiansuper.com/investments-and-performance/what-we-invest-in/superannuation-premixed-investment-options/indexed-diversified.aspx">Go to Product page</a></td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                    </tr>
+                                    <tr class="gradeC">
+                                        <td>Australian Super Conservative Balanced</td>
+                                        <td>0.54%</td>
+                                        <td><a href="https://www.australiansuper.com/investments-and-performance/what-we-invest-in/superannuation-premixed-investment-options/conservative-balanced.aspx">Go to Product page</a></td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Custom Asset Allocation
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example-2">
+                                <thead>
+                                    <tr>
+                                        <th>Fund Name</th>
+                                        <th>Fees p.a. %</th>
+                                        <th>More info</th>
+                                        <th>Investment fee</th>
+                                        <th>Administration fee p.a.</th>
+                                        <th>Switch fee</th>
+                                        <th>Exit fee</th>
+                                        <th>Indirect cost ratio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>Hostplus - Choiceplus</td>
+                                        <td>$419.40 p.a. or 0.36% on $118K (12 transactions)</td>
+                                        <td><a href="https://hostplus.com.au/-/media/Files/Hostplus/Documents/1192-9-Guide-Choiceplus-0317-FA-LR.pdf?la=en" target="_blank">Guide</a></td>
+                                        <td>Brokerage (E.g. $79.80 p.a. for 4 transactions, $239.40 for 12 transactions) 
+$0.00 to $10,000.00 $19.95
+$10,000.01 to $27,500.00 $29.95
+
+$27,500.01 to $250,000.00 0.11% of trade value</td>
+                                        <td>$180</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Hostplus - Macquarie Investment Management - Australian Fixed Interest</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Hostplus - Diversified Fixed Interest</td>
+                                        <td>$678.20 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Hostplus - IFM - Australian Shares</td>
+                                        <td>$778.20 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>First State Super - Cash</td>
+                                        <td>$778.22 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>First State Super - Australian Fixed Interest</td>
+                                        <td>$778.23 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Sunsuper - Australian Shares - Index</td>
+                                        <td>$778.24 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>First State Super - Australian Equities</td>
+                                        <td>$778.25 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Sunsuper - International Shares - Index (Unhedged)</td>
+                                        <td>$778.26 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Sunsuper - International Shares - Index (Hedged)</td>
+                                        <td>$778.27 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>First State Super - International Equities </td>
+                                        <td>$778.28 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>First State Super - International Fixed Interest</td>
+                                        <td>$778.29 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Sunsuper - Australian Property Index</td>
+                                        <td>$778.30 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>Sunsuper - Fixed Interest Index</td>
+                                        <td>$778.31 p.a. or 0.49% on $118K</td>
+                                        <td><a href="http://static.macquarie.com/dafiles/Internet/mgl/au/mfg/docs/platform-pds/macquarie-master-fixed-interest-fund-pds-pf.pdf?v=9" target="_blank">Guide</a></td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>$578.20 p.a. or 0.49% on $118K (Management Fee)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBW9ZFNgB9-r3im9R5yJ-IgsFHQVjWW7Rk",
+    authDomain: "the-super-life.firebaseapp.com",
+    databaseURL: "https://the-super-life.firebaseio.com",
+    projectId: "the-super-life",
+    storageBucket: "the-super-life.appspot.com",
+    messagingSenderId: "437820294279"
+  };
+  firebase.initializeApp(config);
+</script>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true,
+            order: [ 1, "asc" ],
+            info: false,
+            paging: false,
+            searching: false
+        });
+        $('#dataTables-example-2').DataTable({
+            responsive: true,
+            order: [ 1, "asc" ]
+        });
+    });
+    </script>
+
+</body>
+
+</html>
