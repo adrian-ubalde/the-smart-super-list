@@ -6,6 +6,19 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var filesExist = require('files-exist');
+
+gulp.task('copy-files-to-public', function() {
+    var publicFiles = [
+        'pages/index.html',
+        'pages/detailed.html',
+        'pages/custom-asset-allocations.html',
+        'pages/custom-asset-allocations-detailed.html',
+        'pages/sad-face.jpg'
+    ];
+    return gulp.src(filesExist(publicFiles))
+        .pipe(gulp.dest('public'))
+});
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -113,7 +126,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'js', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'less', 'minify-css', 'js', 'minify-js', ], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('dist/css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
