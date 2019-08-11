@@ -120,7 +120,7 @@ gulp.task('default', ['minify-css', 'minify-js', 'copy']);
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: ''
+            index: "/index.html"
         },
     })
 })
