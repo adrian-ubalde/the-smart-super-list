@@ -120,7 +120,7 @@ gulp.task('default', ['minify-css', 'minify-js', 'copy']);
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: ''
+            index: "/index.html"
         },
     })
 })
@@ -131,6 +131,6 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'js', 'minify-js', ], fun
     gulp.watch('dist/css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('pages/*.html', browserSync.reload);
+    gulp.watch('public/*.html', browserSync.reload);
     gulp.watch('dist/js/*.js', browserSync.reload);
 });
