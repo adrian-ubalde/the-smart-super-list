@@ -8,6 +8,11 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var filesExist = require('files-exist');
 
+function reload(done) {
+    browserSync.reload({ stream: true });
+    done();
+}
+
 gulp.task('copy-files-to-public', function() {
     var publicFiles = [
         'pages/index.html',
@@ -29,52 +34,41 @@ var banner = ['/*!\n',
     ''
 ].join('');
 
-// Compile LESS files from /less into /css
-gulp.task('less', function() {
+function compileLess() {
     return gulp.src('less/sb-admin-2.less')
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-});
+        .pipe(minifyCss())
+        .pipe(browserSync.stream());
+};
 
-// Minify compiled CSS
-gulp.task('minify-css', gulp.series('less', () => {
+function minifyCss() {
     return gulp.src('dist/css/sb-admin-2.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-}));
+        .pipe(browserSync.stream());
+};
 
-// Copy JS to dist
-gulp.task('js', function() {
+function js() {
     return gulp.src(['js/sb-admin-2.js'])
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-})
+        .pipe(browserSync.stream());
+};
 
-// Minify JS
-gulp.task('minify-js', gulp.series('js', () => {
+const minifyJs = gulp.series(js, () => {
     return gulp.src('js/sb-admin-2.js')
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
-}));
+        .pipe(browserSync.stream());
+});
 
 // Copy vendor libraries from /bower_components into /vendor
-gulp.task('copy', function() {
+const copy = () => {
     gulp.src(['bower_components/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
         .pipe(gulp.dest('vendor/bootstrap'))
 
@@ -110,27 +104,26 @@ gulp.task('copy', function() {
 
     gulp.src(['bower_components/raphael/raphael.js', 'bower_components/raphael/raphael.min.js'])
         .pipe(gulp.dest('vendor/raphael'))
-
-})
+}
 
 // Run everything
-gulp.task('default', gulp.series('minify-css', 'minify-js', 'copy'));
+gulp.task('default', gulp.series(minifyCss, minifyJs, copy));
 
-// Configure the browserSync task
-gulp.task('browserSync', function() {
+function serve(done) {
     browserSync.init({
         server: {
             index: "/index.html"
         },
-    })
-})
+    });
+    done();
+}
 
-// Dev task with browserSync
-gulp.task('dev', gulp.series('browserSync', 'less', 'minify-css', 'js', 'minify-js'), function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('dist/css/*.css', ['minify-css']);
-    gulp.watch('js/*.js', ['minify-js']);
+function watch() {
+    gulp.watch('less/*.less', compileLess);
+    gulp.watch('js/*.js', minifyJs);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('public/*.html', browserSync.reload);
-    gulp.watch('dist/js/*.js', browserSync.reload);
-});
+    gulp.watch('public/*.html').on('change', browserSync.reload);
+    gulp.watch('dist/js/*.js').on('change', browserSync.reload);
+}
+
+exports.dev = gulp.series(compileLess, minifyJs, serve, watch);
