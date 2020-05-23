@@ -12,7 +12,10 @@ The website url is found at https://www.thesmartsuperlist.com/.
 ## How to run locally
 
 ```
-$ gulp dev
+the-smart-super-list$ nvm use v10.20.1 # If using v12+, gulp won't work unless using npm-force-resolutions fix in https://stackoverflow.com/a/58394828 
+the-smart-super-list$ npm install
+the-smart-super-list$ npm install --global gulp-cli
+the-smart-super-list$ gulp dev
 ```
 
 ## How to serve and test Firebase project locally
