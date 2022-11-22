@@ -6,7 +6,7 @@
   "author": "Adrian Ubalde",
   "license": "UNLICENSED",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "files-exist": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
