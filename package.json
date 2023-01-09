@@ -20,6 +20,6 @@
     "url": "git://github.com/adrian-ubalde/the-super-life.git"
   },
   "dependencies": {
-    "firebase-functions": "^0.5.5"
+    "firebase-functions": "^4.1.1"
   }
 }
